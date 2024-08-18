@@ -1,0 +1,4 @@
+export enum OTP_METHOD {
+  REGISTER = "REGISTER",
+  FORGOT = "FORGOT",
+}

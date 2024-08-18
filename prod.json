@@ -1,0 +1,8 @@
+{
+  "name" : "med-auth-service",
+  "script" : "./build/index.js",
+  "env_production" : {
+    "SERVER_ENV": "dev",
+    "PORT": 30601
+  }
+}

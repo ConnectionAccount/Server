@@ -1,0 +1,16 @@
+# /node_modules
+/node_modules
+build
+.vscode
+.DS_Store
+
+# .gitignore
+# Dockerfile
+# README.md
+# install.sh
+# jest.config.js
+package-lock.json
+# package.json
+# prod.json
+# src/
+# tsconfig.json

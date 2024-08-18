@@ -1,0 +1,4 @@
+export const ATTEMPT_STATUS = {
+  SUCCESS: "SUCCESS",
+  FAILED : "FAILED"
+};
