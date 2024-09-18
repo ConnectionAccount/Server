@@ -14,7 +14,7 @@ export default Method.post("/auth/forgot", schema, async (req: Request, res: Res
   const { email } = req.body;
 
   const user = await User.findOne({ email: email });
-  if (!user) throw new NotfoundError(ERRORS.USER_NOTFOUND,"Хэрэгэлэгч олдсонгүй.");
+  if (!user) throw new NotfoundError(ERRORS.USER_NOTFOUND, "Хэрэгэлэгч олдсонгүй.");
   const SESSION_ID = await getSession(req);
   
   signIn(
