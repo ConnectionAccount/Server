@@ -95,7 +95,7 @@ UserSchema.methods.validatePassword = async function (password: string) {
   const valid = await bcrypt.compare(password, this.password);
   return valid;
 };
-
+  
 UserSchema.methods.createPassword = async function (password: string) {
   const SALT_ROUNDS = 10;
 
@@ -105,4 +105,5 @@ UserSchema.methods.createPassword = async function (password: string) {
 
   return newPassword;
 };
+
 export const User = mongoose.model<IUser>("User", UserSchema);

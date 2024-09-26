@@ -32,10 +32,7 @@ export default Method.post(
     const {
       platform: platform, // set, mine
     } = req.headers;
-    const user = await User.findOne({ email: email }).populate({
-      model: "Customer",
-      path: "customer",
-    });
+    const user = await User.findOne({ email: email })
     if (!user) throw new UnauthorizedError(ERRORS.AUTHENTICATION_FAILED);
     const SESSION_ID = await getSession(req);
     if (user.customer) {
@@ -58,11 +55,6 @@ export default Method.post(
 
       await user.save();
 
-      // await new AuthChangeProducer(kafkaWrapper).send(user._id.toString(), {
-      //   id: user._id.toString(),
-      //   sessionId: SESSION_ID.toString(),
-      //   createdAt: new Date().toISOString(),
-      // });
       signIn(
         res,
         {
